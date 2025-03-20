@@ -1,0 +1,88 @@
+/* Existing styles */
+#home {
+    background-color: pink;
+}
+
+#page2 {
+    background-color: aquamarine;
+}
+
+h1, a {
+    font-family: "Lobster", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: blue;
+}
+
+#ingredients {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.cursive {
+    font-family: 'Brush Script MT', cursive;
+}
+
+/* New Grid Layout */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns */
+    grid-template-rows: auto auto auto; /* Automatic row heights */
+    grid-template-areas: 
+        "title title"
+        "desc image"
+        "ingredients recipe";
+    gap: 20px;
+    max-width: 900px;
+    margin: auto;
+}
+
+h1 {
+    grid-area: title;
+    text-align: center;
+}
+
+.description {
+    grid-area: desc;
+    font-size: 18px;
+}
+
+img {
+    grid-area: image;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 8px;
+}
+
+.ingredients {
+    grid-area: ingredients;
+    background: #f8f8f8;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.recipe {
+    grid-area: recipe;
+    background: #f1f1f1;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+/* Responsive: Stack layout for small screens */
+@media (max-width: 600px) {
+    body {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "title"
+            "image"
+            "desc"
+            "ingredients"
+            "recipe";
+    }
+    img {
+        max-width: 100%;
+    }
+}
